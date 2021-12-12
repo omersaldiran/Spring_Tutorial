@@ -20,4 +20,12 @@ public class TeacherService {
     public void addNewTeacher(Teacher teacher) {
         Optional<Teacher> teacherOptional = teacherRepository.findTeacherByEmail(teacher.getEmail());
     }
+
+    public void deleteTeacher(Long teacherId) {
+        boolean exist = teacherRepository.existsById(teacherId);
+        if(!exist){
+            throw new IllegalStateException("teacher with id " + teacherId + " does not exists");
+        }
+        teacherRepository.deleteById(teacherId);
+    }
 }

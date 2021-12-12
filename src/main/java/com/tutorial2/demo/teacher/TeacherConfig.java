@@ -17,8 +17,10 @@ public class TeacherConfig {
         return args -> {
             Teacher omer = new Teacher("Ömer","Master","osaldiran@saldiran.com",LocalDate.of(1991,05,05)
             );
+            Teacher kadir = new Teacher("Kadir","Bachelor","ksaldiran@saldiran.com",LocalDate.of(1991,05,05)
+            );
 
-            repository.saveAll(List.of(omer)
+            repository.saveAll(List.of(omer,kadir)
             );
         };
     }
